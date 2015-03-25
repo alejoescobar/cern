@@ -1,0 +1,16 @@
+<%= form_for @physicist do |f| %>
+  <p>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :specialty %>
+    <%= f.select :specialty, options_for_select(Physicist.specialties.keys) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

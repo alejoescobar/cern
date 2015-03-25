@@ -1,0 +1,19 @@
+<%= form_for @experiment do |f| %>
+  <p>
+    <%= f.collection_select(:physicist_id, Physicist.experimentalist, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %> <br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

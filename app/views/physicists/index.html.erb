@@ -1,0 +1,23 @@
+<h1>Listing Physicists</h1>
+
+<p><%= link_to 'New physicist', new_physicist_path %></p>
+<p><%= link_to 'Assign Experiment', experiments_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Specialty</th>
+    <th colspan='3'></th>
+  </tr>
+  <% @physicists.each do |physicist| %>
+    <tr>
+      <td><%= physicist.name %></td>
+      <td><%= physicist.specialty %></td>
+      <td><%= link_to 'Show', physicist_path(physicist) %></td>
+      <td><%= link_to 'Edit', edit_physicist_path(physicist) %></td>
+      <td><%= link_to 'Destroy', physicist_path(physicist),
+              method: :delete,
+              data: { confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+</table>
